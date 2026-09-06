@@ -18,4 +18,19 @@
     <color name="ink_secondary">#64748B</color>
     <color name="ink_muted">#94A3B8</color>
     <color name="border_input">#E2E8F0</color>
+
+    <!-- Colores de marca MiPlata nuevos -->
+    <color name="green_dark">#005233</color>
+    <color name="brand_light">#E6F7F1</color>
+    <color name="amber_bg">#FEF3C7</color>
+    <color name="amber_text">#92400E</color>
+    <color name="red_bg">#FEE2E2</color>
+    <color name="blue_bg">#DBEAFE</color>
+    <color name="blue_text">#1E40AF</color>
+    <color name="secondary_container">#DAE2FD</color>
+    <color name="surface_container">#E5EEFF</color>
+    <color name="surface_container_low">#EFF4FF</color>
+    <color name="surface_container_high">#DCE9FF</color>
+    <color name="tertiary_red">#B91A24</color>
+    <color name="tertiary_container">#FF6963</color>
 </resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_inicio"
+        android:icon="@drawable/ic_dashboard"
+        android:title="Inicio" />
+    <item
+        android:id="@+id/nav_historial"
+        android:icon="@drawable/ic_receipt"
+        android:title="Historial" />
+    <item
+        android:id="@+id/nav_add"
+        android:icon="@drawable/ic_add"
+        android:title="" />
+    <item
+        android:id="@+id/nav_analisis"
+        android:icon="@drawable/ic_trending_up"
+        android:title="Análisis" />
+    <item
+        android:id="@+id/nav_recordatorios"
+        android:icon="@drawable/ic_notification"
+        android:title="Recordatorios" />
+</menu>

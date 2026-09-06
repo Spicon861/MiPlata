@@ -27,6 +27,21 @@
             android:name=".HomeActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MiPlata" />
+
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MiPlata" />
+
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MiPlata" />
+
     </application>
 
 </manifest>

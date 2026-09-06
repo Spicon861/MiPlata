@@ -33,4 +33,6 @@
     <color name="surface_container_high">#DCE9FF</color>
     <color name="tertiary_red">#B91A24</color>
     <color name="tertiary_container">#FF6963</color>
+    <color name="surface_container_lowest">#FFFFFF</color>
+
 </resources>

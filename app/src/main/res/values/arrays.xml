@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="currencies">
+        <item>USD ($)</item>
+        <item>COP ($)</item>
+        <item>EUR (€)</item>
+    </string-array>
+    <string-array name="cuentas_gasto">
+        <item>Visa Débito ****4120</item>
+        <item>Efectivo billetera</item>
+        <item>Cuenta Nómina Principal</item>
+    </string-array>
+    <string-array name="cuentas_ingreso">
+        <item>Bancolombia Ahorros ****2841</item>
+        <item>Nequi Principal</item>
+        <item>Efectivo billetera</item>
+        <item>Daviplata ****9014</item>
+    </string-array>
+</resources>

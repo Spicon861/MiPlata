@@ -78,7 +78,7 @@ public class HomeActivity extends AppCompatActivity {
             if (id == R.id.nav_inicio) {
                 return true;
             } else if (id == R.id.nav_add) {
-                // Por ahora vacío, luego conectamos NuevaTransaccionActivity
+                startActivity(new Intent(this, NuevaTransaccionActivity.class));
                 return false;
             }
             // Las demás pantallas (Historial, Análisis, Recordatorios) las conectamos

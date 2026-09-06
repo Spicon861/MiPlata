@@ -1,12 +1,16 @@
 package com.example.miplata;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -33,17 +37,38 @@ public class MainActivity extends AppCompatActivity {
         cbRemember = findViewById(R.id.cbRemember);
 
         btnLogin.setOnClickListener(v -> {
-            String email = etEmail.getText().toString();
+            String email = etEmail.getText().toString().trim();
             String password = etPassword.getText().toString();
-            // por ahora vacío, luego conectamos lógica real de autenticación
+
+            if (TextUtils.isEmpty(email) || !Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                etEmail.setError("Ingresa un correo válido");
+                etEmail.requestFocus();
+                return;
+            }
+
+            if (TextUtils.isEmpty(password)) {
+                etPassword.setError("Ingresa tu contraseña");
+                etPassword.requestFocus();
+                return;
+            }
+
+            // TODO: aquí luego conectamos la autenticación real (backend / Firebase / etc.)
+            // Por ahora, cualquier correo + contraseña válidos entran a la app.
+            Toast.makeText(this, "¡Bienvenido a MiPlata!", Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+            startActivity(intent);
+            finish();
         });
 
         tvForgotPassword.setOnClickListener(v -> {
-            // por ahora vacío
+            Intent intent = new Intent(MainActivity.this, ForgotPasswordActivity.class);
+            startActivity(intent);
         });
 
         tvRegister.setOnClickListener(v -> {
-            // por ahora vacío, luego navegamos a pantalla de registro
+            Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+            startActivity(intent);
         });
 
         btnTogglePassword.setOnClickListener(v -> {

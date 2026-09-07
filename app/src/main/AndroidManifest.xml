@@ -42,7 +42,15 @@
         <activity
             android:name=".NuevaTransaccionActivity"
             android:exported="false" />
-
+        <activity
+            android:name=".HistorialActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecordatoriosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AnalisisActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

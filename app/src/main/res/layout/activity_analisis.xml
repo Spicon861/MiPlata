@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/surface_base">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNavigation"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:paddingBottom="24dp">
+
+            <!-- Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RESUMEN FINANCIERO"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brand_primary"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Análisis"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/ink_primary"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnExportar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_pill_gray"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="8dp"
+                    android:clickable="true">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_download"
+                        app:tint="@color/brand_primary"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:text="Exportar"
+                        android:textSize="12sp"
+                        android:textColor="@color/ink_primary"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="16dp"/>
+
+            <!-- Selector de periodo -->
+            <LinearLayout
+                android:id="@+id/periodTabsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_pill_gray"
+                android:padding="4dp"/>
+
+            <View android:layout_width="match_parent" android:layout_height="12dp"/>
+
+            <!-- Buscador + filtro -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_input_search"
+                    android:paddingHorizontal="14dp">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/ic_search"
+                        app:tint="@color/ink_secondary"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Buscar por comercio, categoría..."
+                        android:textSize="13sp"
+                        android:textColor="@color/ink_muted"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/btnFiltros"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_input_search"
+                    android:padding="11dp"
+                    android:src="@drawable/ic_tune"
+                    app:tint="@color/ink_primary"
+                    android:clickable="true"/>
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="16dp"/>
+
+            <!-- Donut Chart -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_card_white"
+                android:padding="16dp"
+                android:elevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_donut_large"
+                        app:tint="@color/brand_primary"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:text="Distribución de Gastos"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/ink_primary"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Noviembre 2024"
+                        android:textSize="11sp"
+                        android:textColor="@color/ink_secondary"
+                        android:background="@drawable/bg_pill_gray"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="4dp"/>
+
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="12dp"/>
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/donutChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"/>
+
+                <View android:layout_width="match_parent" android:layout_height="8dp"/>
+
+                <LinearLayout
+                    android:id="@+id/legendContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"/>
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="16dp"/>
+
+            <!-- Presupuesto -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_card_white"
+                android:padding="16dp"
+                android:elevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PRESUPUESTO MENSUAL"
+                            android:textSize="10sp"
+                            android:textColor="@color/ink_secondary"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Meta de Gasto"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/ink_primary"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="✓ En buen camino"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/green_dark"
+                        android:background="@drawable/bg_badge_green"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="5dp"/>
+
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="12dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="$1,450.20 de $2,000.00"
+                        android:textSize="13sp"
+                        android:textColor="@color/ink_primary"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="72% consumido"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brand_primary"/>
+
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="8dp"/>
+
+                <ProgressBar
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:max="100"
+                    android:progress="72"
+                    android:progressTint="@color/brand_primary"
+                    android:progressBackgroundTint="@color/surface_container_high"/>
+
+                <View android:layout_width="match_parent" android:layout_height="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Te quedan $549.80 disponibles"
+                        android:textSize="11sp"
+                        android:textColor="@color/ink_secondary"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Quedan 10 días"
+                        android:textSize="11sp"
+                        android:textColor="@color/ink_secondary"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="16dp"/>
+
+            <!-- Movimientos -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Movimientos"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/ink_primary"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6 registros"
+                    android:textSize="12sp"
+                    android:textColor="@color/ink_secondary"/>
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="10dp"/>
+
+            <LinearLayout
+                android:id="@+id/ledgerContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        app:itemIconTint="@color/bottom_nav_colors"
+        app:itemTextColor="@color/bottom_nav_colors"
+        app:menu="@menu/bottom_nav_menu"
+        app:elevation="8dp"/>
+
+</RelativeLayout>

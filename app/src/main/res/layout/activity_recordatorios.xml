@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/surface_base">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNavigation"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:paddingBottom="24dp">
+
+            <!-- Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recordatorios"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/ink_primary"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Control de facturas, servicios y recurrencias"
+                        android:textSize="12sp"
+                        android:textColor="@color/ink_secondary"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_error_pill"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="6dp">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_priority_high"
+                        app:tint="@color/tertiary_red"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:text="2 urgentes"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/on_error_container"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="16dp"/>
+
+            <!-- Hero Summary Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_card_white"
+                android:padding="18dp"
+                android:elevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="POR PAGAR ESTE MES"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/ink_secondary"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📅 Octubre"
+                        android:textSize="11sp"
+                        android:textColor="@color/ink_secondary"
+                        android:background="@drawable/bg_pill_gray"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="4dp"/>
+
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$1.420.000 COP"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/ink_primary"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="✓ Cubres el 82% con tu saldo proyectado"
+                    android:textSize="12sp"
+                    android:textColor="@color/ink_secondary"/>
+
+                <View android:layout_width="match_parent" android:layout_height="14dp"/>
+
+                <!-- Alerta crítica -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_error_light"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/bg_circle"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_electric_bolt"
+                        app:tint="@color/tertiary_red"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Enel · Energía"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/ink_primary"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Vence en 2 días ($185.000)"
+                            android:textSize="11sp"
+                            android:textColor="@color/tertiary_red"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/btnPagarUrgente"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pagar"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF"
+                        android:background="@drawable/bg_chip_primary"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="8dp"
+                        android:clickable="true"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="16dp"/>
+
+            <!-- Botón Nuevo Recordatorio -->
+            <LinearLayout
+                android:id="@+id/btnNuevoRecordatorio"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/bg_button_primary"
+                android:clickable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+ Nuevo recordatorio"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"/>
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="16dp"/>
+
+            <!-- Chips de filtro (dinámicos) -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/filterChipsContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"/>
+
+            </HorizontalScrollView>
+
+            <View android:layout_width="match_parent" android:layout_height="16dp"/>
+
+            <!-- Vencen pronto -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔴 Vencen pronto"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/ink_primary"/>
+
+            <View android:layout_width="match_parent" android:layout_height="8dp"/>
+
+            <LinearLayout
+                android:id="@+id/vencenProntoContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+
+            <View android:layout_width="match_parent" android:layout_height="16dp"/>
+
+            <!-- Próximas semanas -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Próximas semanas"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/ink_primary"/>
+
+            <View android:layout_width="match_parent" android:layout_height="8dp"/>
+
+            <LinearLayout
+                android:id="@+id/proximasSemanasContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+
+            <View android:layout_width="match_parent" android:layout_height="16dp"/>
+
+            <!-- Acordeón: Pagados recientemente -->
+            <LinearLayout
+                android:id="@+id/toggleHistorial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_pill_gray"
+                android:padding="14dp"
+                android:clickable="true">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_task_alt"
+                    app:tint="@color/brand_primary"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:text="Pagados recientemente (1)"
+                    android:textSize="14sp"
+                    android:textColor="@color/ink_primary"/>
+
+                <ImageView
+                    android:id="@+id/accordionIcon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_expand_more"
+                    app:tint="@color/ink_secondary"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/historialContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginTop="8dp"/>
+
+            <View android:layout_width="match_parent" android:layout_height="16dp"/>
+
+            <!-- Banner final -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_pill_gray"
+                android:padding="14dp">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/bg_circle"
+                    android:backgroundTint="@color/brand_primary"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_verified_user"
+                    app:tint="#FFFFFF"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cero mora, finanzas tranquilas"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/ink_primary"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MiPlata te notifica antes de cada fecha límite."
+                        android:textSize="11sp"
+                        android:textColor="@color/ink_secondary"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        app:itemIconTint="@color/bottom_nav_colors"
+        app:itemTextColor="@color/bottom_nav_colors"
+        app:menu="@menu/bottom_nav_menu"
+        app:elevation="8dp"/>
+
+</RelativeLayout>

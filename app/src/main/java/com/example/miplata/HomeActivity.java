@@ -80,9 +80,19 @@ public class HomeActivity extends AppCompatActivity {
             } else if (id == R.id.nav_add) {
                 startActivity(new Intent(this, NuevaTransaccionActivity.class));
                 return false;
+            } else if (id == R.id.nav_historial) {
+                startActivity(new Intent(this, HistorialActivity.class));
+                finish();
+                return true;
+            } else if (id == R.id.nav_recordatorios) {
+                startActivity(new Intent(this, RecordatoriosActivity.class));
+                finish();
+                return true;
+            } else if (id == R.id.nav_analisis) {
+                startActivity(new Intent(this, AnalisisActivity.class));
+                finish();
+                return true;
             }
-            // Las demás pantallas (Historial, Análisis, Recordatorios) las conectamos
-            // cuando estén construidas
             return false;
         });
     }
